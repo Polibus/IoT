@@ -15,7 +15,7 @@ function Devices({}) {
 
 
     const addDevice = async () => {
-        const device = {name: name, place: place}
+        const device = {id: name, place: place}
         const updatedDevices = [...devices, device];
         setDevices(updatedDevices)
         setModalVisible(!modalVisible)
