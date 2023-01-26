@@ -15,7 +15,7 @@ function Devices({}) {
 
 
     const addDevice = async () => {
-        const device = {id: name, place: place}
+        const device = {name: name, place: place}
         const updatedDevices = [...devices, device];
         setDevices(updatedDevices)
         setModalVisible(!modalVisible)
@@ -49,7 +49,7 @@ function Devices({}) {
                 />
             </View>
             <View style={styles.positionPlus}>
-                <TouchableOpacity style={styles.openModal} onPress={() => setModalVisible(!modalVisible)} >
+                <TouchableOpacity style={styles.plus} onPress={() => setModalVisible(!modalVisible)} >
                     <View >
                         <Icon name={'plus'} size={25} color={'black'}
                         />
@@ -65,7 +65,7 @@ function Devices({}) {
                     setModalVisible(!modalVisible);
                 }}>
 
-                <View style={styles.modalView}>
+                <View style={styles.container}>
                     <View style={styles.inputView}>
 
                         <TextInput
@@ -88,14 +88,14 @@ function Devices({}) {
                         />
                         <View style={styles.buttonStyles}>
                         <Pressable
-                            style={styles.pressableStyle}
+                            style={styles.position}
 
                             onPress={() => setModalVisible(!modalVisible) }
                         >
                             <Text style={styles.textStyle}>Cancel</Text>
                         </Pressable>
                             <Pressable
-                                style={styles.pressableStyle}
+                                style={styles.position}
                                 onPress={() => addDevice()}
                             >
                                 <Text style={styles.textStyle}>Save</Text>
@@ -111,7 +111,7 @@ function Devices({}) {
 }
 
 const styles = StyleSheet.create({
-    openModal: {
+    plus: {
         backgroundColor: '#eeeeee',
         borderWidth: 1,
         borderRadius: 10,
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         marginTop: 250
     },
-    modalView: {
+    container: {
         flex:1,
         backgroundColor: "#eeeeee"
     },
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginBottom: 20, 
     },
-    textInputMargin: {
+    textInputName: {
         height: 60,
         backgroundColor: "white",
         marginBottom: 20,
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontFamily: "Caveat-VariableFont_wght"
     },
-    pressableStyle: {
+    position: {
         width: 100,
         backgroundColor: "white",
         borderWidth: 1,
