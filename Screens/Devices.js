@@ -27,7 +27,6 @@ function Devices({}) {
 
     const findDevice = async () => {
        const result =  await AsyncStorage.getItem('devices');
-        console.log(result)
        if(result !== null)
            setDevices((JSON).parse(result))
 
@@ -52,7 +51,7 @@ function Devices({}) {
             <View style={styles.positionPlus}>
                 <TouchableOpacity style={styles.openModal} onPress={() => setModalVisible(!modalVisible)} >
                     <View >
-                        <Icon name={'plus'} size={30} color={'#BA2DD2'}
+                        <Icon name={'plus'} size={25} color={'black'}
                         />
                     </View>
                 </TouchableOpacity>
@@ -113,7 +112,8 @@ function Devices({}) {
 
 const styles = StyleSheet.create({
     openModal: {
-        backgroundColor: '#ffe200',
+        backgroundColor: '#eeeeee',
+        borderWidth: 1,
         borderRadius: 10,
         width: 60,
         height: 60,
@@ -155,14 +155,15 @@ const styles = StyleSheet.create({
         justifyContent:"space-between",
         padding: 50, alignContent: "center",
         flexDirection: "row",
-        fontFamily: "Merriweather-Black",
+        fontFamily: "Caveat-VariableFont_wght",
         marginTop: 100,
         padding: 10
     },
     textStyle: {
         color: "black",
         textAlign: "center",
-        fontFamily: "Merriweather-Black"
+        fontSize: 25,
+        fontFamily: "Caveat-VariableFont_wght"
     },
     pressableStyle: {
         width: 100,

@@ -2,7 +2,7 @@ import  React from 'react';
 import { View,StyleSheet,Text } from 'react-native';
 import {NavigationContainer}  from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from "react-native-vector-icons/FontAwesome";
+import Icon from "react-native-vector-icons/MaterialIcons";
 import devices from "./Screens/Devices"
 import Connection from "./Screens/Connection"
 
@@ -17,12 +17,9 @@ function App() {
     <NavigationContainer>
       <Tab.Navigator screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, size, color }) => {
-          let iconName;
           return (
               <Icon
-                  name={iconName}
-                  size={size}
-                  color={'blue'}
+                  name='person' size={30}
               />
           )
         }
