@@ -69,7 +69,7 @@ function Devices({}) {
                     <View style={styles.inputView}>
 
                         <TextInput
-                            style={styles.textInputMargin}
+                            style={styles.textInputName}
                             placeholder="Name"
                             onChangeText={name => setName(name)}
                             defaultValue={name}
