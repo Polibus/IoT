@@ -1,6 +1,7 @@
-import  React from 'react';
+import React, {useEffect, useState} from 'react';
 import { View,StyleSheet,Text } from 'react-native';
 import {NavigationContainer}  from '@react-navigation/native';
+import SplashScreen from 'react-native-splash-screen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import devices from "./Screens/Devices"
@@ -11,7 +12,10 @@ const Tab = createBottomTabNavigator();
 
 function App() {
 
-  
+  useEffect(() => {
+    SplashScreen.hide();
+  }, [])
+
 
   return (
     <NavigationContainer>
